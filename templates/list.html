@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ask Mate</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style_list.css')}}">
+    </head>
+    <body>
+        <h1>Ask Mate</h1>
+        <p><a href="{{ url_for('route_add') }}">Add new Question</a></p>
+
+        <table>
+
+        <thead id ="thead">
+            <tr><th>Id</th>
+                <th id ="theadid">Question Title</th>
+                <th>Submission Time</th>
+                <th>Vote Number</th>
+                <th>Question ID</th>
+                <th>Message</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in user_question %}
+            <tr>
+                <td>{{ line.id }}</td>
+                <td id="linetitle">
+
+                        <a href="{{ url_for('route_edit', question_id=line.id) }}">{{ line.title }}</a>
+
+                </td>
+                <td>{{ line.submission_time }}</td>
+                <td>{{ line.vote_number }}</td>
+                <td>{{ line.question_id }} point</td>
+                <td>{{ line.message }} h</td>
+                <td>{{ line.image }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='style_add.css') }}">
+    <title>Add New Question</title>
+</head>
+
+<body>
+
+
+    <h1>Add User Question</h1><br>
+    <form action="{{ url_for('result') }}" method="post">
+        <label>Question Title:<br>
+            <input type="text" minlength="5" required name="questiontitle">
+        </label>
+        <br><br>
+        <label id="theadid">Message:<br>
+            <textarea rows="4" cols="50" required name="message"></textarea>
+        </label>
+
+        <br><br>
+        <label>Submission Time:<br>
+             <textarea rows="4" cols="50" required name="submissiontime"></textarea>
+        </label>
+        <br><br>
+        <label>Vote Number:<br>
+             <textarea rows="4" cols="50" required name="votenumber"></textarea>
+        </label>
+        <br><br>
+        <label>Image:<br>
+             <textarea rows="4" cols="50" required name="image"></textarea>
+        </label>
+        <br><br>
+        <input type="submit" value="Add new User Question">
+    </form>
+
+
+</body>
+</html>
