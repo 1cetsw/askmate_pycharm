@@ -29,12 +29,12 @@ def result():
         return render_template('result.html')
 
 @app.route('/update/<question_id>', methods = ['POST', 'GET'])
-def route_edit(id_question):
+def route_edit(question_id):
     table = data_handler.get_all_user_question(FILE)
     result = {}
     if request.method == 'GET':
         for line in table:
-            if line['question_id'] == id_question:
+            if line['id'] == question_id:
                 result = line
         return render_template('update.html', result = result)
 

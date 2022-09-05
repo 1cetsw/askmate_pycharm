@@ -19,7 +19,7 @@ The management is very interested in the agile development methodologies that th
 
 ## Tasks
 
-1. Implement the `/list` page that displays all questions.
+1. Implement the `/list` page that displays all questions.   ### DONE ALL
     - The page is available under `/list`.
     - The data is loaded and displayed from `question.csv`.
     - The questions are sorted by most recent.
@@ -30,7 +30,7 @@ The management is very interested in the agile development methodologies that th
     - The page displays the question title and message.
     - The page displays all answers to a question.
 
-3. Implement a form that allows the user to add a question.
+3. Implement a form that allows the user to add a question. ###DONE ALL
     - There is an `/add-question` page with a form.
     - The page is linked from the list page.
     - There is a POST form with at least `title` and `message` fields.

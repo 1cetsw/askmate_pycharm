@@ -13,10 +13,11 @@ Scripts/
 __pycache__/
 *.py[cod]
 *$py.class
-
+pyvenv.cfg
 # C extensions
 *.so
-
+Scripts/
+.Scripts/
 # Distribution / packaging
 .Python
 build/

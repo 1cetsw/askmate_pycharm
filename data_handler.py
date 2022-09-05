@@ -3,8 +3,8 @@ import os
 import sys
 sys.path.append("./")
 DATA_FILE_PATH = os.getenv('DATA_FILE_PATH') if 'DATA_FILE_PATH' in os.environ else 'question.csv'
-DATA_HEADER = ['id', 'title', 'message','image']
-STATUSES = ['planning', 'todo', 'in progress', 'review', 'done']
+DATA_HEADER = ['id','submission_time','view_number','vote_number','title','message','image']
+
 
 
 def get_all_user_question(filename):
@@ -29,19 +29,20 @@ def change_user_question(filename, mylist):
     for line in dict_list:
         if line['id'] == mylist[0]:
             line['submission_time'] = mylist[1]
-            line['vote_number'] = mylist[2]
-            line['question_id'] = mylist[3]
-            line['message'] = mylist[4]
-            line['image'] = mylist[5]
+            line['view_number'] = mylist[2]
+            line['vote_number'] = mylist[3]
+            line['title'] = mylist[4]
+            line['message'] = mylist[5]
+            line['image'] = mylist[6]
 
     with open(filename, 'w', newline='') as csv_file:
         fieldnames = DATA_HEADER
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for dict in dict_list:
-            writer.writerow({'submission_time': dict['submission_time'], 'vote_number': dict['vote_number'],
-                         'question_id': dict['question_id'],
-                         'message': dict['message'], 'image': dict['image']})
+            writer.writerow({'id': dict['id'],'submission_time': dict['submission_time'],
+                             'view_number': dict['view_number'],'vote_number': dict['vote_number'],
+                             'title': dict['title'],'message': dict['message'], 'image': dict['image']})
 
 
 

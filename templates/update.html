@@ -3,39 +3,49 @@
 
 <head>
     <meta charset="utf-8">
-   <link rel="stylesheet" href="{{ url_for('static', filename='style_add.css') }}">
-    <title>Edit Story</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_add.css') }}">
+    <title>Edit Question</title>
 </head>
 
 <body>
-    <h1>Edit Question</h1><br>
-    <form action="{{ url_for('route_edit_result') }}" method="post">
+<h1>Edit User Question</h1><br>
+<form action="{{ url_for('route_edit_result') }}" method="post">
+    <label>Id:<br>
+        <input type="number" required name="id" value="{{ result.id }}">
+    </label>
+    <br><br>
+    <label>Submission Time:<br>
+        <input type="number" min="1" max="9999999999" name="submissiontime" value="{{ result.submissiontime }}">
+    </label>
+    <br><br>
+    <label>View Number:<br>
+        <input type="number" min="1" max="9999999999" name="viewnumber" value="{{ result.viewnumber }}">
+    </label>
+    <br><br>
+    <label>Vote Number:<br>
+        <input type="number" min="1" max="9999999999" name="votenumber" value="{{ result.votenumber }}">
+    </label>
+    <br><br>
+    <label>Question Title:<br>
+        <textarea rows="4" cols="50" required name="title">{{ result.title }}</textarea>
+    </label>
+    <br><br>
+    <label>Message:<br>
+        <textarea rows="4" cols="50" required name="message">{{ result.message }}</textarea>
+    </label>
+    <br><br>
+    <label>
+    <textarea >{{ result.image }}</textarea>
+    <label>Image:<br>
+         <form action="upload.php" method="post" enctype="upload/*" >
+            <label for="img">Select image:</label>
+            <input type="file" id="img" value="Upload" name="img" accept="image/*" >
+            <input type="submit" _>
+        </form>
 
-        <br><br>
-        <label>Question Title:<br>
-            <input type="text" minlength="5" required name="questiontitle" value="{{ result.title }}">
-        </label>
-        <br><br>
-        <label>Message:<br>
-            <textarea rows="4" cols="50" required name="message">{{ result.message }}</textarea>
-        </label>
-        <br><br>
-        <label>Submission Time:<br>
-            <input type="number" min="1" max="1500" name="submissiontime" value="{{ result.submissiontime }}">
-        </label>
-        <br><br>
-        <label>Vote Number:<br>
-             <input type="number" min="1" max="1500" name="votenumber" value="{{ result.votenumber }}">
-        </label>
-        <br><br>
-        <label>Image:<br>
-            <textarea rows="4" cols="50" required name="image">{{ result.image }}</textarea>
-        </label>
 
-        <br><br>
-
-        <br><br>
-        <input type="submit" value="Update User Story">
-    </form>
+    </label><br><br>
+    <input type="submit" value="Update User Question">
+</form>
 </body>
 </html>

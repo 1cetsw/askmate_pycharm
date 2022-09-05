@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Ask Mate</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style_list.css')}}">
-    </head>
-    <body>
-        <h1>Ask Mate</h1>
-        <p><a href="{{ url_for('route_add') }}">Add new Question</a></p>
+<head>
+    <meta charset="utf-8">
+    <title>Ask Mate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_list.css') }}">
 
-        <table>
+</head>
 
-        <thead id ="thead">
-            <tr><th>Id</th>
-                <th id ="theadid">Question Title</th>
-                <th>Submission Time</th>
-                <th>Vote Number</th>
-                <th>Question ID</th>
-                <th>Message</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for line in user_question %}
-            <tr>
-                <td>{{ line.id }}</td>
-                <td id="linetitle">
+<body>
+<h1>Ask Mate</h1>
+<h2><a href="{{ url_for('route_add') }}">
+    <img alt="ADD"
+         src="https://toppng.com/uploads/preview/add-new-questions-add-question-icon-1156298351152eixf9qfh.png"
+         width=50" height="50">
+</a></h2>
 
-                        <a href="{{ url_for('route_edit', question_id=line.id) }}">{{ line.title }}</a>
+<table>
+    <thead title="thead">
+    <tr>
+        <th>Id</th>
+        <th>Submission Time</th>
+        <th>View Number</th>
+        <th>Vote Number</th>
+        <th id="theadid">Question Title</th>
+        <th>Message</th>
+        <th>Image</th>
 
-                </td>
-                <td>{{ line.submission_time }}</td>
-                <td>{{ line.vote_number }}</td>
-                <td>{{ line.question_id }} point</td>
-                <td>{{ line.message }} h</td>
-                <td>{{ line.image }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </body>
+    </tr>
+    </thead>
+    <tbody>
+    {% for line in user_question %}
+        <tr>
+            <td>{{ line.id }}</td>
+            <td>{{ line.submission_time }}</td>
+            <td>{{ line.view_number }}</td>
+            <td>{{ line.vote_number }}</td>
+            <td>{{ line.title }}</td>
+            <td>{{ line.message }} h</td>
+            <td>{{ line.image }}</td>
+            <td title="EDIT">
+                {#                    <a href="{{ url_for('route_edit', question_id=line.id) }}">{{ "EDIT" }}</a>#}
+                <a href="{{ url_for('route_edit', question_id=line.id) }}">
+                    <img alt="edit"
+                         src="https://www.nicepng.com/png/full/137-1378331_edit-button-blue-clip-art-icon-button-edit.png"
+                         width=70" height="30">
+                </a>
+
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
 </html>
