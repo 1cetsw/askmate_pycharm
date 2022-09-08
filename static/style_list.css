@@ -1,35 +1,26 @@
 table {
     border-collapse: collapse;
+    margin-right: 16px;
 }
-
 td, th {
     border: 2px solid black;
 }
-
 body {
-    background-image: url("https://as1.ftcdn.net/v2/jpg/04/26/75/00/1000_F_426750044_vsndNZZ8OxT6ozvGnCSPNVGy7sLwGVX2.jpg");
-
-    width: 100%;
+    background-image: url("/static/images/background_list.jpg");
+    width: 99%;
     height: 100%;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-color: lightgrey;
     color: black;
 }
-h1 {
-    background-color: lightcyan;
-    color: black;
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
-}
 h2 {
     margin: 5px;
     padding: 5px;
 }
 table {
-    margin: 5px;
-    padding: 5px;
+    margin: 1px;
+    padding: 1px;
     background-color: lightcyan;
     color: black;
 }

@@ -15,7 +15,8 @@
     </label>
     <br><br>
     <label>Submission Time:<br>
-        <input type="number" min="1" max="9999999999" name="submissiontime" value="{{ result.submissiontime }}">
+        <input type="number" min="1000000000" max="9999999999" name="submissiontime"
+               value="{{ result.submissiontime }}">
     </label>
     <br><br>
     <label>View Number:<br>
@@ -35,17 +36,12 @@
     </label>
     <br><br>
     <label>
-    <textarea >{{ result.image }}</textarea>
-    <label>Image:<br>
-         <form action="upload.php" method="post" enctype="upload/*" >
-            <label for="img">Select image:</label>
-            <input type="file" id="img" value="Upload" name="img" accept="image/*" >
-            <input type="submit" _>
-        </form>
+        <label>Image:<br>
+           <iframe src="http://127.0.0.1:5000/upload" title="upload" width="300" height="60" {{ result.message }}>
+        </iframe>
 
-
-    </label><br><br>
-    <input type="submit" value="Update User Question">
+        </label><br><br>
+        <input type="submit" value="Update User Question">
 </form>
 </body>
 </html>

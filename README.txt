@@ -10,7 +10,7 @@ There is no need for additional functionality, such as user management or commen
 
 The management is very interested in the agile development methodologies that they recently heard about, so they are handing out a **prioritized list** of user stories, called a product backlog. Try to estimate how many of these stories your team can finish until the demo. As the order is important, choose from the beginning of the list as much as you can. **The first four stories are the most important**.
 
-## What are you going to learn?
+## What are you going to learn? ### DONE ALL
 
 - Create a Flask project.
 - Use routes with Flask.
