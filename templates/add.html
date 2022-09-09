@@ -8,8 +8,6 @@
 </head>
 
 <body>
-
-
 <h1>Add User Question</h1><br>
 <form action="{{ url_for('result') }}" method="post">
 
@@ -35,17 +33,11 @@
     </label>
     <br><br>
     <label>Image:<br>
-        <iframe src="http://127.0.0.1:5000/upload" width="300" height="60"
-        </iframe>
+        <iframe src="http://127.0.0.1:5000/upload" width="300" height="60" required name="image"> </iframe>
+
     </label>
     <br><br>
-    <br><br>
-    <br><br>
-    <input type=file name=file required name="image">
-    <input type=submit value=Upload>
-
     <input type="submit" value="Add new User Story">
-
 </form>
 
 </body>

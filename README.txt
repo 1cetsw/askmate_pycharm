@@ -19,10 +19,7 @@ The management is very interested in the agile development methodologies that th
 
 ## Tasks
 
-1. Implement the `/list` page that displays all questions.   ### DONE ALL
-    - The page is available under `/list`.
-    - The data is loaded and displayed from `question.csv`.
-    - The questions are sorted by most recent.
+
 
 2. Create the `/question/<question_id>` page that displays a question and the answers for it.
     - The page is available under `/question/<question_id>`.
@@ -30,11 +27,7 @@ The management is very interested in the agile development methodologies that th
     - The page displays the question title and message.
     - The page displays all answers to a question.
 
-3. Implement a form that allows the user to add a question. ###DONE ALL
-    - There is an `/add-question` page with a form.
-    - The page is linked from the list page.
-    - There is a POST form with at least `title` and `message` fields.
-    - After submitting, the page redirects to "Display a question" page of this new question.
+
 
 4. Implement posting a new answer.
     - The page URL is `/question/<question_id>/new-answer`.
@@ -42,10 +35,6 @@ The management is very interested in the agile development methodologies that th
     - The page has a POST form with a form field called `message`.
     - Posting an answer redirects to the question detail page. The new answer is displayed on the question detail page.
 
-5. Implement sorting for the question list.
-    - The question list can be sorted by title, submission time, message, number of views, and number of votes.
-    - The question list can be put in ascending and descending order.
-    - The order is passed as query string parameters, such as `/list?order_by=title&order_direction=desc`.
 
 6. Implement deleting a question.
     - Deleting is implemented by the `/question/<question_id>/delete` endpoint.

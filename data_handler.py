@@ -33,7 +33,8 @@ def change_user_question(filename, mylist):
             line['vote_number'] = mylist[3]
             line['title'] = mylist[4]
             line['message'] = mylist[5]
-            # line['image'] = mylist[6]
+            line['image'] = mylist[6]
+
 
     with open(filename, 'w', newline='') as csv_file:
         fieldnames = DATA_HEADER

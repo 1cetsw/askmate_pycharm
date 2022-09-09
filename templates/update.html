@@ -35,13 +35,13 @@
         <textarea rows="4" cols="50" required name="message">{{ result.message }}</textarea>
     </label>
     <br><br>
-    <label>
-        <label>Image:<br>
-           <iframe src="http://127.0.0.1:5000/upload" title="upload" width="300" height="60" {{ result.message }}>
-        </iframe>
+    <label>Image:<br>
 
-        </label><br><br>
-        <input type="submit" value="Update User Question">
+        <iframe src="http://127.0.0.1:5000/upload" width="300" height="60"  name="image">{{ result.image }}></iframe>
+
+    </label>
+    <br><br>
+    <input type="submit" value="Update User Question">
 </form>
 </body>
 </html>

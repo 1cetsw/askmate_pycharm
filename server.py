@@ -96,7 +96,8 @@ def upload_file():
 @app.route('/upload/<name>')
 def download_file(name):
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
-
-
+@app.route('/index')
+def index():
+    return render_template('index.html')
 if __name__ == "__main__":
     app.run(debug = True)

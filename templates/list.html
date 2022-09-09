@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Ask Mate</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style_list.css') }}">
+
 </head>
 
 <body>
@@ -13,41 +14,93 @@
          src="/static/images/add_button.png"
          width=50" height="50">
 </a></h2>
-
-<table>
-    <thead title="thead">
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<table class="sortable" id="myTable">
     <tr>
         <th>Id</th>
         <th>Submission Time</th>
         <th>View Number</th>
         <th>Vote Number</th>
-        <th id="theadid">Question Title</th>
+        <th>Question Title</th>
         <th>Message</th>
         <th>Image</th>
-
     </tr>
-    </thead>
-    <tbody>
+
     {% for line in user_question %}
-        <tr>
-            <td>{{ line.id }}</td>
-            <td>{{ line.submission_time }}</td>
-            <td>{{ line.view_number }}</td>
-            <td>{{ line.vote_number }}</td>
+        <tr class="item">
+            <td>{{ line.id }} </td>
+            <td>{{ line.submission_time }} </td>
+            <td>
+                <center>{{ line.view_number }}</center>
+            </td>
+            <td>
+                <center>{{ line.vote_number }}</center>
+                <up><a href="">
+                    <img alt="vote_up"
+                         src="/static/images/up_button.png"
+                         width=20" height="20"></a></up>
+
+                <down><a href="">
+                    <img alt="vote_down"
+                         src="/static/images/down_button.png"
+                         width=20" height="20"></a></down>
+            </td>
             <td>{{ line.title }}</td>
             <td>{{ line.message }} </td>
-            <td>{{ line.image }}</td>
+            <td>{{ line.image }}
+                <a href="">
+                    <img alt="upload file"
+                         src="/static/upload_file/image1.jpg"
+                         width="70" height="50"></a></td>
             <td title="EDIT">
                 <a href="{{ url_for('route_edit', question_id=line.id) }}">
                     <img alt="edit"
-                         src="https://www.nicepng.com/png/full/137-1378331_edit-button-blue-clip-art-icon-button-edit.png"
-                         width=70" height="30">
-                </a>
-
-            </td>
+                         src="/static/images/edit_button.png"
+                         width=70" height="30"></a></td>
+            <td title="delete">
+                <a href="">
+                    <img alt="delete"
+                         src="/static/images/delete_button.png"
+                         width=35" height="35"></a></td>
         </tr>
     {% endfor %}
-    </tbody>
 </table>
+<br><br>
+{#dla zabawy pliki coockies:D#}
+{#<link rel="stylesheet" href="{{ url_for('static', filename='cookie.css') }}">#}
+{#<body>#}
+{#  <div class="wrapper">#}
+{#    <img src="/" alt="">#}
+{#    <div class="content">#}
+{#      <header>Cookies Consent</header>#}
+{#      <p>This website use cookies to ensure you get the best experience on our website.</p>#}
+{#      <div class="buttons">#}
+{#        <button class="item">I understand</button>#}
+{#        <a href="#" class="item">Learn more</a>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+{#  <script>#}
+{#    const cookieBox = document.querySelector(".wrapper"),#}
+{#    acceptBtn = cookieBox.querySelector("button");#}
+{##}
+{#    acceptBtn.onclick = ()=>{#}
+{#      //setting cookie for 1 month, after one month it'll be expired automatically#}
+{#      document.cookie = "CookieBy=CodingNepal; max-age="+60*60*24*30;#}
+{#      if(document.cookie){ //if cookie is set#}
+{#        cookieBox.classList.add("hide"); //hide cookie box#}
+{#      }else{ //if cookie not set then alert an error#}
+{#        alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");#}
+{#      }#}
+{#    }#}
+{#    let checkCookie = document.cookie.indexOf("CookieBy=CodingNepal"); //checking our cookie#}
+{#    //if cookie is set then hide the cookie box else show it#}
+{#    checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");#}
+{#  </script>#}
+
+</body>
+
+<center><footer id="STOPKA">Project CodeCool 2022</footer></center>
 </body>
 </html>
