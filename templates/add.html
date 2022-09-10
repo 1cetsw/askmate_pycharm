@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+{% extends "layout.html" %} {% block title %}Add New Question{% endblock %} {% block head %} {{ super() }} {% endblock %} {% block body %}
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style_add.css') }}">
-    <title>Add New Question</title>
-</head>
-
-<body>
 <h1>Add User Question</h1><br>
 <form action="{{ url_for('result') }}" method="post">
 
@@ -39,7 +31,4 @@
     <br><br>
     <input type="submit" value="Add new User Story">
 </form>
-
-</body>
-
-</html>
+{% endblock %}
