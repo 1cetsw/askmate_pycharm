@@ -6,6 +6,13 @@ DATA_FILE_PATH = os.getenv('DATA_FILE_PATH') if 'DATA_FILE_PATH' in os.environ e
 DATA_HEADER = ['id','submission_time','view_number','vote_number','title','message','image']
 
 
+def find_record(table, question_id):
+    result = {}
+    for line in table:
+            if line['id'] == question_id:
+                result = line
+    return result
+
 
 def get_all_user_question(filename):
     dict_list = []
@@ -33,7 +40,7 @@ def change_user_question(filename, mylist):
             line['vote_number'] = mylist[3]
             line['title'] = mylist[4]
             line['message'] = mylist[5]
-            line['image'] = mylist[6]
+            line['image'] =  mylist[6] if len(mylist) == 7 else ''
 
 
     with open(filename, 'w', newline='') as csv_file:
@@ -41,9 +48,4 @@ def change_user_question(filename, mylist):
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for dict in dict_list:
-            writer.writerow({'id': dict['id'],'submission_time': dict['submission_time'],
-                             'view_number': dict['view_number'],'vote_number': dict['vote_number'],
-                             'title': dict['title'],'message': dict['message'], 'image': dict['image']})
-
-
-
+            writer.writerow(dict)
