@@ -1,7 +1,4 @@
-table {
-    border-collapse: collapse;
-    margin-right: 16px;
-}
+
 td, th {
     border: 2px solid black;
 }
@@ -28,6 +25,8 @@ table {
     padding: 1px;
     background-color: lightcyan;
     color: black;
+border-collapse: collapse;
+    margin-right: 16px;
 }
 up {
      position: relative;
